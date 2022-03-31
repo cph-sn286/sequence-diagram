@@ -1,0 +1,25 @@
+@startuml
+
+actor       Customer       as customer
+boundary    Homepage    as homepage
+control     DisplayMyPage     as displaymypage
+boundary    Mypage    as mypage
+control     entergoals   as entergoals
+control     setgoal  as setgoal
+entity      Goal      as goal
+control     areGoalSet as areGoalSet
+control showgoals as showgoals
+
+
+
+
+customer -> homepage:
+homepage -> displaymypage : "Customer clicks mypage"
+displaymypage -> mypage :
+mypage -> entergoals :
+entergoals -> setgoal : "customer enter goals"
+setgoal -> goal :
+goal -> areGoalSet :
+areGoalSet -> showgoals : "yes"
+showgoals -> mypage :
+@enduml
