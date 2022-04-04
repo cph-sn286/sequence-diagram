@@ -12,8 +12,6 @@ control showgoals as showgoals
 control showInputOppurtunity as showInputOppurtunity
 
 
-
-
 customer -> homepage:
 homepage -> displaymypage : "Customer clicks mypage"
 displaymypage -> mypage :
@@ -22,11 +20,11 @@ entergoals -> setgoal : "customer enter goals"
 setgoal -> goal :
 goal -> areGoalSet :
 areGoalSet -> showgoals : yes
-OPT optional workflow (yes)
+OPT optional workflow
 showgoals -> mypage :
 end
 areGoalSet -> showInputOppurtunity : no
-ALT alternative workflow
+ALT  alternative workflow
 showInputOppurtunity -> mypage :
 end
 
